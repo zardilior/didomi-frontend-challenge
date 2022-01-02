@@ -1,11 +1,12 @@
 import Box from '@mui/material/Box';
 import logo from 'resources/logo.svg';
 import LeftSideMenu from 'components/LeftSideMenu';
+import { MenuOptions } from 'constants';
 import './style.css';
 function MainLayout() {
   return (
     <Box className="MainLayout">
-      <LeftSideMenu />
+      <LeftSideMenu menuOptions={MenuOptions} />
       <Box className="MainLayout-header">
         <img src={logo} className="MainLayout-logo" alt="logo" />
         <p>

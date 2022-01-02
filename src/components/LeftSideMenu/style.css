@@ -1,0 +1,11 @@
+:root {
+  --drawer-width: 180px;
+}
+.Drawer {
+  width: var(--drawer-width);
+  flex-shrink: 0;
+}
+.Drawer .MuiDrawer-paper {
+  width: var(--drawer-width);
+  box-sizing: border-box;
+}
