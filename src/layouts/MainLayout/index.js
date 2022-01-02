@@ -1,9 +1,12 @@
-import logo from '../resources/logo.svg';
-import './MainLayout.css';
+import Box from '@mui/material/Box';
+import logo from 'resources/logo.svg';
+import LeftSideMenu from 'components/LeftSideMenu';
+import './style.css';
 function MainLayout() {
   return (
-    <div className="MainLayout">
-      <header className="MainLayout-header">
+    <Box className="MainLayout">
+      <LeftSideMenu />
+      <Box className="MainLayout-header">
         <img src={logo} className="MainLayout-logo" alt="logo" />
         <p>
           Edit <code>src/MainLayout.js</code> and save to reload.
@@ -16,9 +19,9 @@ function MainLayout() {
         >
           Learn React
         </a>
-      </header>
-    </div>
-  );
+      </Box>
+    </Box>
+  )
 }
 
 export default MainLayout;

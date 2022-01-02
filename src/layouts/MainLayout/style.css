@@ -1,5 +1,6 @@
 .MainLayout {
   text-align: center;
+  display: flex;
 }
 
 .MainLayout-logo {
@@ -22,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex: 1;
 }
 
 .MainLayout-link {
