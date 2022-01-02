@@ -1,10 +1,17 @@
 module.exports = {
   eslint: {
     mode: "extends",
-    coonfigure: {
+    configure: {
       rules: {
         "no-console": "warn"
       }
     }
   },
+  jest: {
+    configure: {
+      testMatch: [
+        "**/test.js"
+      ]
+    }
+  }
 }

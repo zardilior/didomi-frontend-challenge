@@ -1,10 +1,12 @@
 export const MenuOptions = [
   {
     key: 'give-consent',
-    text: 'Give Consent'
+    link: 'give-consent',
+    text: 'Give Consent',
   },
   {
-    key: 'collected-consent',
-    text: 'Collected consents'
+    key: 'consents',
+    link: 'consents',
+    text: 'Collected consents',
   },
 ];

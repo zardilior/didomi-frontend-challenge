@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import { BrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  Navigate,
+  Routes,
+  Route
+} from "react-router-dom";
+import MainLayout from 'layouts/MainLayout';
+import GiveConsent from 'pages/GiveConsent';
+import Consents from 'pages/Consents';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/" element={<MainLayout />} >
+          <Route path="give-consent" element={<GiveConsent />} />
+          <Route path="consents" element={<Consents />} />
+          <Route path="*" element={<Navigate to='give-consent' />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

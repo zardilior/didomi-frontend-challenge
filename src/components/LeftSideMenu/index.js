@@ -1,19 +1,23 @@
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import { Link } from "react-router-dom";
 import ListItemText from '@mui/material/ListItem';
 import './style.css'
 
 
-const MenuItem = ({ key, text }) => ( 
-    <ListItem key={key} >  
-      { text } 
+const MenuItem = ({ key, text, link }) => ( 
+    <ListItem key={key} button component={Link} to={link}>  
+      <ListItemText>
+        { text } 
+      </ListItemText>
     </ListItem> 
 )
 
 const defaultMenuOption = {
   key: "missing-menu-options",
-  text: "Missing Menu Options"
+  text: "Missing Menu Options",
+  link: "/"
 };
 
 function LeftSideMenu({
