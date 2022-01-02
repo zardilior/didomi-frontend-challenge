@@ -1,0 +1,14 @@
+.Consents {
+  min-height: 90vh;
+  display: flex;
+  flex:1;
+  justify-content: center;
+}
+
+.TableWrapper {
+  width: 800px;
+  height: 200px;
+  display: flex;
+  max-width: 80%;
+  overflow: scroll;
+}
