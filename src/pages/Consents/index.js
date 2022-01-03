@@ -18,11 +18,11 @@ const fetchConsents = (page) => ({
 const Consents = () => {
   const [page,setPage] = useState(0);
   const rowCount = 10;
+
   const {
     data, 
-    error,
     loading,
-    pristine
+    error,
   } = useQuery({
     type: 'FETCH_CONSENTS',
     action: fetchConsents,
@@ -31,7 +31,6 @@ const Consents = () => {
     autoReset: true
   })
 
-  console.log({ data, loading, error, pristine });
   const consents = data?.data || [];
   const total = data?.total || 10;
   return (
@@ -40,6 +39,7 @@ const Consents = () => {
         <DataGrid 
           columns={Columns}
           rows={consents} 
+          loading={loading}
           pageSize={2}
           page={page}
           rowCount={total}

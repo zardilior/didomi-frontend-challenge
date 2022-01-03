@@ -9,3 +9,6 @@
 .field {
   margin: 16px;
 }
+.error {
+  color: red;
+}
