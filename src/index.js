@@ -11,18 +11,22 @@ import MainLayout from 'layouts/MainLayout';
 import GiveConsent from 'pages/GiveConsent';
 import Consents from 'pages/Consents';
 import reportWebVitals from './reportWebVitals';
+import store from './store'
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />} >
-          <Route path="give-consent" element={<GiveConsent />} />
-          <Route path="consents" element={<Consents />} />
-          <Route path="*" element={<Navigate to='give-consent' />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />} >
+            <Route path="give-consent" element={<GiveConsent />} />
+            <Route path="consents" element={<Consents />} />
+            <Route path="*" element={<Navigate to='give-consent' />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

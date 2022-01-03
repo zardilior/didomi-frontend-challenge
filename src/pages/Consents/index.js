@@ -12,32 +12,34 @@ const Columns = [
 
 const fetchConsents = (page) => ({
   type: 'FETCH_CONSENTS',
-  request: { url: `/consents` },
+  request: { url: `/consents?page=${page}` },
 });
 
 const Consents = () => {
   const [page,setPage] = useState(0);
   const rowCount = 10;
   const {
-    data: response, 
+    data, 
     error,
-    loading 
+    loading,
+    pristine
   } = useQuery({
+    type: 'FETCH_CONSENTS',
     action: fetchConsents,
     variables: [page],
     autoLoad: true,
     autoReset: true
   })
 
-  console.log({ response });
-  const data = response?.data || [];
-  const total = response?.total || 10;
+  console.log({ data, loading, error, pristine });
+  const consents = data?.data || [];
+  const total = data?.total || 10;
   return (
     <Box className="Consents" sx={{m:4}}>
       <Box className="TableWrapper" sx={{m:4}}>
         <DataGrid 
           columns={Columns}
-          rows={data} 
+          rows={consents} 
           pageSize={2}
           page={page}
           rowCount={total}

@@ -13,27 +13,30 @@ const Consents = [
   { label: 'Contribute to anonymous visit statistics'}
 ];
 
-const GiveConsent = () => (
-  <Box className="GiveConsent">
-    <Stack className="TextWrapper" spacing={2} direction="row" >
-      <TextField label="name" variant="outlined" />     
-      <TextField label="email" variant="outlined" />     
-    </Stack>
-    <Box sx={{my: 4}}> I agree to </Box>
-    <FormGroup sx={{border:'1px solid black', p:2, mb:4 }}>
-      { Consents.map(
-        ({label}) => (
-          <FormControlLabel
-            control={<Checkbox />}
-            label={label} 
-          />
-        )
-      )}
-    </FormGroup>
-    <Button variant="contained" size="large">
-      Give Consent 
-    </Button>
+const GiveConsent = () => {
+  return (
+    <Box className="GiveConsent">
+      <Stack className="TextWrapper" spacing={2} direction="row" >
+        <TextField label="name" variant="outlined" />     
+        <TextField label="email" variant="outlined" />     
+      </Stack>
+      <Box sx={{my: 4}}> I agree to </Box>
+      <FormGroup sx={{border:'1px solid black', p:2, mb:4 }}>
+        { Consents.map(
+          ({label}) => (
+            <FormControlLabel
+              control={<Checkbox />}
+              label={label} 
+              key={label} 
+            />
+          )
+        )}
+      </FormGroup>
+      <Button variant="contained" size="large">
+        Give Consent 
+      </Button>
 
-  </Box>
-);
+    </Box>
+  );
+}
 export default GiveConsent;
